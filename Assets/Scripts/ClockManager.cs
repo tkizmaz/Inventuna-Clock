@@ -14,6 +14,8 @@ public class ClockManager : MonoBehaviour
     private GameObject secondHand;
 
     private int timeToDegreeMultiplier = 6;
+    private int totalDegree = 360;
+    private int totalHours = 12;
 
     void Start()
     {
@@ -34,6 +36,6 @@ public class ClockManager : MonoBehaviour
         minuteHand.transform.eulerAngles = new Vector3(0, 0, -minutes * timeToDegreeMultiplier);
 
         float hourDistance = (float) minutes / 60f;
-        hourHand.transform.eulerAngles = new Vector3(0, 0, -(hours + hourDistance) / 360/12);
+        hourHand.transform.eulerAngles = new Vector3(0, 0, -(hours + hourDistance) / (totalDegree / totalHours));
     }
 }
