@@ -5,13 +5,13 @@ using UnityEngine;
 public class ClockManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject hourHand;
+    private Transform hourHandTransform;
 
     [SerializeField]
-    private GameObject minuteHand;
+    private Transform minuteHandTransform;
 
     [SerializeField]
-    private GameObject secondHand;
+    private Transform secondHandTransform;
 
     private int timeToDegreeMultiplier = 6;
     private int totalDegree = 360;
@@ -24,18 +24,16 @@ public class ClockManager : MonoBehaviour
 
     void Update()
     {
-        string secondsString = System.DateTime.UtcNow.ToString("ss");
-        string minutesString = System.DateTime.UtcNow.ToString("mm");
-        string hoursString = System.DateTime.UtcNow.ToString("hh");
+        string secondsString = System.DateTime.Now.ToString("ss");
+        string minutesString = System.DateTime.Now.ToString("mm");
+        string hoursString = System.DateTime.Now.ToString("hh");
 
         int seconds = int.Parse(secondsString);
         int minutes = int.Parse(minutesString);
         int hours = int.Parse(hoursString);
 
-        secondHand.transform.eulerAngles = new Vector3(0, 0, -seconds * timeToDegreeMultiplier);
-        minuteHand.transform.eulerAngles = new Vector3(0, 0, -minutes * timeToDegreeMultiplier);
-
-        float hourDistance = (float) minutes / 60f;
-        hourHand.transform.eulerAngles = new Vector3(0, 0, -(hours + hourDistance) / (totalDegree / totalHours));
+        secondHandTransform.eulerAngles = new Vector3(0, 0, -seconds * timeToDegreeMultiplier);
+        minuteHandTransform.eulerAngles = new Vector3(0, 0, -minutes * timeToDegreeMultiplier);
+        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -hours * (totalDegree / totalHours));
     }
 }
