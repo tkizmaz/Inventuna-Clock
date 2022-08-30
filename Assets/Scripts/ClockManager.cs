@@ -17,11 +17,6 @@ public class ClockManager : MonoBehaviour
     private int totalDegree = 360;
     private int totalHours = 12;
 
-    void Start()
-    {
-         
-    }
-
     void Update()
     {
         string secondsString = System.DateTime.Now.ToString("ss");
@@ -34,6 +29,6 @@ public class ClockManager : MonoBehaviour
 
         secondHandTransform.eulerAngles = new Vector3(0, 0, -seconds * timeToDegreeMultiplier);
         minuteHandTransform.eulerAngles = new Vector3(0, 0, -minutes * timeToDegreeMultiplier);
-        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -(hours + (float)(minutes) / 60f) * (totalDegree / totalHours));
+        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -hours * (totalDegree / totalHours));
     }
 }
