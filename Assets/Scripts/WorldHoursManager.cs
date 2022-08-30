@@ -23,7 +23,7 @@ public class WorldHoursManager : MonoBehaviour
             return cityTimeZones[selectedCity];
         }
 
-        return "Istanbul Standard Time";
+        return "Turkey Standard Time";
     }
 
     public System.DateTime GetTargetTimeZone()
