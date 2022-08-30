@@ -48,7 +48,9 @@ public class ClockManager : MonoBehaviour
 
         secondHandTransform.eulerAngles = new Vector3(0f, 0f, -seconds * timeToDegreeMultiplier);
         minuteHandTransform.eulerAngles = new Vector3(0f, 0f, -minutes * timeToDegreeMultiplier);
-        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -hours * (totalDegree / totalHours));
+
+        float hourInterval = (float)minutes / 60f;
+        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -(hours + hourInterval) * (totalDegree / totalHours));
     }
 
     public void SetCity(Button button)
