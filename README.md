@@ -18,8 +18,8 @@ There are 2 types of chronometers in this clock, the one at the bottom will show
 
 https://streamable.com/e1ktt3
 
-Rotation of the clock hands handled with euler angle given to each clock.
-Clock hands are created by 2D Sprites where the pivot is at the bottom.
+Rotation of the clock hands handled with euler angle given to each clock hand.
+Clock hands are created by Sprites where the pivot is at the bottom.
 
 You can watch each module with the given link.
 
