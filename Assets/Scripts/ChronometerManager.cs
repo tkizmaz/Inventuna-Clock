@@ -13,6 +13,7 @@ public class ChronometerManager : MonoBehaviour
     private Transform minuteHand;
 
     private float timer = 0f;
+
     private int timeToDegreeMultiplier = 6;
     private int secondsInAMinute = 60;
     
