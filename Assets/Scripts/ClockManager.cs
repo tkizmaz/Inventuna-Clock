@@ -31,6 +31,11 @@ public class ClockManager : MonoBehaviour
 
     void Update()
     {
+        RotateClockHands();
+    }
+
+    private void RotateClockHands()
+    {
         targetTimeZone = worldHoursManager.GetSelectedCity() == null ? System.DateTime.Now : worldHoursManager.GetTargetTimeZone();
 
         string secondsString = targetTimeZone.Second.ToString();
@@ -41,9 +46,9 @@ public class ClockManager : MonoBehaviour
         int minutes = int.Parse(minutesString);
         int hours = int.Parse(hoursString);
 
-        secondHandTransform.eulerAngles = new Vector3(0, 0, -seconds * timeToDegreeMultiplier);
-        minuteHandTransform.eulerAngles = new Vector3(0, 0, -minutes * timeToDegreeMultiplier);
-        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -hours * (totalDegree / totalHours));
+        secondHandTransform.eulerAngles = new Vector3(0, 0, -seconds* timeToDegreeMultiplier);
+        minuteHandTransform.eulerAngles = new Vector3(0, 0, -minutes* timeToDegreeMultiplier);
+        hourHandTransform.transform.eulerAngles = new Vector3(0, 0, -hours* (totalDegree / totalHours));
     }
 
     public void SetCity(Button button)
