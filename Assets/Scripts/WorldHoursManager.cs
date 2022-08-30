@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WorldHoursManager : MonoBehaviour
 {
-    Dictionary<string, string> cityHourDifference = new Dictionary<string, string>
+    Dictionary<string, string> cityTimeZones = new Dictionary<string, string>
     {
         {"NewYork" , "Eastern Standard Time"},
         {"China",  "China Standard Time"},
@@ -17,9 +17,9 @@ public class WorldHoursManager : MonoBehaviour
     private string selectedCity;
     public string GetTimeZone()
     {
-        if (cityHourDifference.ContainsKey(selectedCity))
+        if (cityTimeZones.ContainsKey(selectedCity))
         {
-            return cityHourDifference[selectedCity];
+            return cityTimeZones[selectedCity];
         }
 
         return "Istanbul Standard Time";
