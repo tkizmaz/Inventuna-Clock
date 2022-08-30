@@ -18,7 +18,7 @@ public class ClockManager : MonoBehaviour
     private int totalDegree = 360;
     private int totalHours = 12;
 
-    private WorldHoursManager worldHoursManager = new WorldHoursManager();
+    private WorldHoursManager worldHoursManager;
 
     System.DateTime targetTimeZone;
 
